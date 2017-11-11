@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- controller -->
+	
+
+	
+	<!-- 메인페이지 -->
+	<mvc:view-controller path="/index.do" view-name="index.tiles"/>
+	<!-- 403 권한 없음 에러 페이지 -->
+	<mvc:view-controller path="/error/access_denied.do" view-name="error/access_denied.tiles"/>
+	<!-- 로그인 폼 -->	
+	<mvc:view-controller path="/login_form.do" view-name="/WEB-INF/view/login_form.jsp"/>
+	
+ 	<!-- 회원 가입 폼 -->
+	<mvc:view-controller path="/add_user_form.do" view-name="user/add_user_form.tiles"/>
+	<!-- 회원 정보 변경 폼 -->
+	<mvc:view-controller path="/user/update_profile_form.do" view-name="user/update_profile_form.tiles"/>
+	<!-- 유저 정보 폼 -->
+	<mvc:view-controller path="/user/mypage.do" view-name="user/mypage.tiles"/>
+	<!-- 유저 탈퇴 폼 -->
+	<mvc:view-controller path="/user/remove_user_form.do" view-name="user/remove_user_form.tiles"/>
+	
+	
+	
+	
+	<!-- bean -->
+
+
+			
+	<!-- TilesConfigurer 빈으로 등록 : Tiles설정파일을 등록하는 빈 -->
+	
+	<bean name="tilesConfig" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>classpath:com/food_store_searching_webpage/tiles/tiles-config.xml</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	<!-- ViewResolver -->
+	
+	<bean name="tilesViewResolver"
+		  class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"
+		  p:order="1"/>
+	
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+			 p:order="2"/>
+	 <!-- p:prefix="/WEB-INF/view/" p:suffix=".jsp" -->
+			
+	<!-- etc -->
+	
+	<context:component-scan base-package="com.food_store_searching_webpage"/>
+	<mvc:annotation-driven/>
+	
+		
+	<!-- FileUpload -->
+	
+	<bean name="filterMultipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>	
+
+		  
+</beans>

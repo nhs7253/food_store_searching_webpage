@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.food_store_searching_webpage.config.mybatis.mapper.BoardMapper">
+
+
+
+	 <sql id="all-column">
+        board_number,
+     	board_title,
+     	board_text,
+    	board_hit,
+     	board_date
+	</sql>
+ 
+ 
+ <!-- 매장 resultMap -->
+ 	<resultMap type="com.study.jsp.vo.Board" id="board-resultmap">
+ 		<id column="board_number" property="boardNumber"/>
+ 		<result column="board_title" property="boardTitle"/>
+ 		<result column="board_text" property="boardText"/>
+ 		<result column="board_hit" property="boardHit"/>
+ 		<result column="board_date" property="boardDate"/>
+ 	</resultMap>
+ 	
+ 	
+ 	
+ 	<select id="selectBoardAll" resultMap="board-resultmap">
+		SELECT <include refid="all-column"/> 
+		FROM board
+	</select>
+	
+	<select id="selectBoardCount" resultType="int">
+		SELECT COUNT(*) 
+		FROM board
+	</select>
+ 	
+</mapper>
