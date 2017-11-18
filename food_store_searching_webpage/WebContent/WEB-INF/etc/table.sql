@@ -59,8 +59,7 @@ SELECT * FROM ALL_COL_COMMENTS WHERE TABLE_NAME = 'NOMAL_USER';
 SELECT * FROM USER_TAB_COMMENTS;
 
 -----------------------------------------------------
--- 공지사항 게시판
-
+-- 공지사항 게시판 (SEQUENCE 포함)
 CREATE TABLE NOTICE_BOARD(
 	NOTICE_NUM  NUMBER PRIMARY KEY,  -- 글번호
 	NOTICE_TITLE VARCHAR2(100), -- 글제목
@@ -68,6 +67,7 @@ CREATE TABLE NOTICE_BOARD(
 	NOTICE_DATE  DATE,    -- 작성일
 	NOTICE_HIT  NUMBER   -- 조회수
 );
+CREATE SEQUENCE NOTICE_NUM_SEQ;
 
 COMMENT ON TABLE NOTICE_BOARD IS '공지사항 게시판';
 
@@ -82,7 +82,7 @@ SELECT * FROM ALL_COL_COMMENTS WHERE TABLE_NAME = 'NOTICE_BOARD';
 SELECT * FROM USER_TAB_COMMENTS;
 
 -----------------------------------------------------
--- 가게 정보
+-- 가게 정보  (SEQUENCE 포함)
 CREATE TABLE  STORE_INFO(
 ADMIN_STORE_NUM    NUMBER PRIMARY KEY,  -- 가게 번호
 ADMIN_STORE_INFO   VARCHAR2(100), -- 가게 정보
@@ -90,6 +90,7 @@ ADMIN_STORE_ADRESS CLOB, -- 가게 주소
 ADMIN_STORE_IMG    DATE, -- 가게 이미지
 STORE_DEFINISION  NUMBER -- 작성자 구분
 );
+CREATE SEQUENCE ADMIN_STORE_NUM_SEQ;
 
 COMMENT ON TABLE STORE_INFO IS '가게정보';
 
@@ -102,7 +103,6 @@ COMMENT ON COLUMN STORE_INFO.STORE_DEFINISION IS '작성자 구분';
 SELECT * FROM ALL_COL_COMMENTS WHERE TABLE_NAME = 'STORE_INFO';
 
 SELECT * FROM USER_TAB_COMMENTS;
-
 
 -----------------------------------------------------
 -- 가게정보 덧글 관리
@@ -156,7 +156,17 @@ SELECT * FROM STORE_INFO;
 SELECT * FROM ADMIN_STORE_REPLE;
 -- 사이트 소개
 SELECT * FROM SIGHT_INTRO;
------------------------------------------------------
+
+--------------------------- 쿼리 생성 최종 라인
+
+
+-- 공지사항 게시판 
+SELECT NOTICE_NUM_SEQ.NEXTVAL FROM DUAL;
+
+-- 가게 정보
+SELECT ADMIN_STORE_NUM_SEQ.NEXTVAL FROM DUAL;
+-------------------------------------------------------
+
 -- 슈퍼 관리자
 DROP TABLE SUPER_ADMIN;
 -- 권한
@@ -171,3 +181,12 @@ DROP TABLE STORE_INFO;
 DROP TABLE ADMIN_STORE_REPLE;
 -- 사이트 소개
 DROP TABLE SIGHT_INTRO;
+
+-----------------------------
+-- SEQUENCE
+
+-- 공지사항 게시판
+DROP SEQUENCE NOTICE_NUM_SEQ;
+
+-- 가게 정보
+DROP SEQUENCE ADMIN_STORE_NUM_SEQ;
