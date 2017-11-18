@@ -84,11 +84,11 @@ SELECT * FROM USER_TAB_COMMENTS;
 -----------------------------------------------------
 -- 가게 정보
 CREATE TABLE  STORE_INFO(
-	"ADMIN_STORE_NUM"    NUMBER PRIMARY KEY,  -- 가게 번호
-	"ADMIN_STORE_INFO"   VARCHAR2(100), -- 가게 정보
-	"ADMIN_STORE_ADRESS" CLOB, -- 가게 주소
-	"ADMIN_STORE_IMG"    DATE, -- 가게 이미지
-	"STORE_DEFINISION"   NUMBER -- 작성자 구분
+ADMIN_STORE_NUM    NUMBER PRIMARY KEY,  -- 가게 번호
+ADMIN_STORE_INFO   VARCHAR2(100), -- 가게 정보
+ADMIN_STORE_ADRESS CLOB, -- 가게 주소
+ADMIN_STORE_IMG    DATE, -- 가게 이미지
+STORE_DEFINISION  NUMBER -- 작성자 구분
 );
 
 COMMENT ON TABLE STORE_INFO IS '가게정보';
@@ -107,7 +107,7 @@ SELECT * FROM USER_TAB_COMMENTS;
 -----------------------------------------------------
 --사이트 소개
 CREATE TABLE SIGHT_INTRO(
-	"INTRO" VARCHAR2(500) PRIMARY KEY -- 사이트 소개
+INTRO VARCHAR2(500) PRIMARY KEY -- 사이트 소개
 );
 COMMENT ON TABLE SIGHT_INTRO IS '사이트 소개';
 
