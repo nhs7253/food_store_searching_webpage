@@ -3,9 +3,9 @@ package com.food_store_searching_webpage.vo;
 import java.sql.Date;
 
 /**
- * 
+ * 가게 정보
  * @author chogo
- *
+ * 유저 또는 Admin 계정이 접근하여, 정보 제공
  */
 public class StoreInfo {
 
