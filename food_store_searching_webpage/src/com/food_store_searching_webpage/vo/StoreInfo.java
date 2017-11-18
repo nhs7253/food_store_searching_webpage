@@ -3,79 +3,79 @@ package com.food_store_searching_webpage.vo;
 import java.sql.Date;
 
 /**
- * 가게 정보
- * @author hs
- * 가게 정보를 담는 객체
+ * 
+ * @author chogo
+ *
  */
 public class StoreInfo {
-	
-	private int admin_store_num; //가게 번호
-	private String admin_store_info; //가게 정보
-	private String admin_store_adress; //가게 주소
-	private Date admin_store_img; //가게 이미지
-	private int store_definision; //작성자 구분
+
+	private int adminStoreNum; //    가게 번호
+	private String adminStoreInfo;   //가게 정보
+	private String adminStoreAdress; //가게 주소
+	private Date adminStoreImg ;   //가게 이미지
+	private int storeDefinision;   //작성자 구분
 	
 	public StoreInfo() {
 	}
 
-	public StoreInfo(int admin_store_num, String admin_store_info, String admin_store_adress, Date admin_store_img,
-			int store_definision) {
-		this.admin_store_num = admin_store_num;
-		this.admin_store_info = admin_store_info;
-		this.admin_store_adress = admin_store_adress;
-		this.admin_store_img = admin_store_img;
-		this.store_definision = store_definision;
+	public StoreInfo(int adminStoreNum, String adminStoreInfo, String adminStoreAdress, Date adminStoreImg,
+			int storeDefinision) {
+		this.adminStoreNum = adminStoreNum;
+		this.adminStoreInfo = adminStoreInfo;
+		this.adminStoreAdress = adminStoreAdress;
+		this.adminStoreImg = adminStoreImg;
+		this.storeDefinision = storeDefinision;
 	}
 
-	public int getAdmin_store_num() {
-		return admin_store_num;
+	public int getAdminStoreNum() {
+		return adminStoreNum;
 	}
 
-	public void setAdmin_store_num(int admin_store_num) {
-		this.admin_store_num = admin_store_num;
+	public void setAdminStoreNum(int adminStoreNum) {
+		this.adminStoreNum = adminStoreNum;
 	}
 
-	public String getAdmin_store_info() {
-		return admin_store_info;
+	public String getAdminStoreInfo() {
+		return adminStoreInfo;
 	}
 
-	public void setAdmin_store_info(String admin_store_info) {
-		this.admin_store_info = admin_store_info;
+	public void setAdminStoreInfo(String adminStoreInfo) {
+		this.adminStoreInfo = adminStoreInfo;
 	}
 
-	public String getAdmin_store_adress() {
-		return admin_store_adress;
+	public String getAdminStoreAdress() {
+		return adminStoreAdress;
 	}
 
-	public void setAdmin_store_adress(String admin_store_adress) {
-		this.admin_store_adress = admin_store_adress;
+	public void setAdminStoreAdress(String adminStoreAdress) {
+		this.adminStoreAdress = adminStoreAdress;
 	}
 
-	public Date getAdmin_store_img() {
-		return admin_store_img;
+	public Date getAdminStoreImg() {
+		return adminStoreImg;
 	}
 
-	public void setAdmin_store_img(Date admin_store_img) {
-		this.admin_store_img = admin_store_img;
+	public void setAdminStoreImg(Date adminStoreImg) {
+		this.adminStoreImg = adminStoreImg;
 	}
 
-	public int getStore_definision() {
-		return store_definision;
+	public int getStoreDefinision() {
+		return storeDefinision;
 	}
 
-	public void setStore_definision(int store_definision) {
-		this.store_definision = store_definision;
+	public void setStoreDefinision(int storeDefinision) {
+		this.storeDefinision = storeDefinision;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((admin_store_adress == null) ? 0 : admin_store_adress.hashCode());
-		result = prime * result + ((admin_store_img == null) ? 0 : admin_store_img.hashCode());
-		result = prime * result + ((admin_store_info == null) ? 0 : admin_store_info.hashCode());
-		result = prime * result + admin_store_num;
-		result = prime * result + store_definision;
+		result = prime * result + ((adminStoreAdress == null) ? 0 : adminStoreAdress.hashCode());
+		result = prime * result + ((adminStoreImg == null) ? 0 : adminStoreImg.hashCode());
+		result = prime * result + ((adminStoreInfo == null) ? 0 : adminStoreInfo.hashCode());
+		result = prime * result + adminStoreNum;
+		result = prime * result + storeDefinision;
 		return result;
 	}
 
@@ -88,32 +88,32 @@ public class StoreInfo {
 		if (getClass() != obj.getClass())
 			return false;
 		StoreInfo other = (StoreInfo) obj;
-		if (admin_store_adress == null) {
-			if (other.admin_store_adress != null)
+		if (adminStoreAdress == null) {
+			if (other.adminStoreAdress != null)
 				return false;
-		} else if (!admin_store_adress.equals(other.admin_store_adress))
+		} else if (!adminStoreAdress.equals(other.adminStoreAdress))
 			return false;
-		if (admin_store_img == null) {
-			if (other.admin_store_img != null)
+		if (adminStoreImg == null) {
+			if (other.adminStoreImg != null)
 				return false;
-		} else if (!admin_store_img.equals(other.admin_store_img))
+		} else if (!adminStoreImg.equals(other.adminStoreImg))
 			return false;
-		if (admin_store_info == null) {
-			if (other.admin_store_info != null)
+		if (adminStoreInfo == null) {
+			if (other.adminStoreInfo != null)
 				return false;
-		} else if (!admin_store_info.equals(other.admin_store_info))
+		} else if (!adminStoreInfo.equals(other.adminStoreInfo))
 			return false;
-		if (admin_store_num != other.admin_store_num)
+		if (adminStoreNum != other.adminStoreNum)
 			return false;
-		if (store_definision != other.store_definision)
+		if (storeDefinision != other.storeDefinision)
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "StoreInfo [admin_store_num=" + admin_store_num + ", admin_store_info=" + admin_store_info
-				+ ", admin_store_adress=" + admin_store_adress + ", admin_store_img=" + admin_store_img
-				+ ", store_definision=" + store_definision + "]";
+		return "StoreInfo [adminStoreNum=" + adminStoreNum + ", adminStoreInfo=" + adminStoreInfo
+				+ ", adminStoreAdress=" + adminStoreAdress + ", adminStoreImg=" + adminStoreImg + ", storeDefinision="
+				+ storeDefinision + "]";
 	}
 }
