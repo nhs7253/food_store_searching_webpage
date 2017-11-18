@@ -6,61 +6,61 @@ package com.food_store_searching_webpage.vo;
  */
 public class NomalUser {
 	
-	private String user_id;  //유저 아이디
-	private String user_nicname; //유저 닉네임
-	private String user_email; //유저 이메일
-	private int authority_id; //권한ID
+	private String userId;  //유저 아이디
+	private String userNicname; //유저 닉네임
+	private String userEmail; //유저 이메일
+	private int authorityId; //권한ID
 	
 	public NomalUser() {
 	}
 
-	public NomalUser(String user_id, String user_nicname, String user_email, int authority_id) {
-		this.user_id = user_id;
-		this.user_nicname = user_nicname;
-		this.user_email = user_email;
-		this.authority_id = authority_id;
+	public NomalUser(String userId, String userNicname, String userEmail, int authorityId) {
+		this.userId = userId;
+		this.userNicname = userNicname;
+		this.userEmail = userEmail;
+		this.authorityId = authorityId;
 	}
 
-	public String getUser_id() {
-		return user_id;
+	public String getUserId() {
+		return userId;
 	}
 
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
+	public void setUserId(String userId) {
+		this.userId = userId;
 	}
 
-	public String getUser_nicname() {
-		return user_nicname;
+	public String getUserNicname() {
+		return userNicname;
 	}
 
-	public void setUser_nicname(String user_nicname) {
-		this.user_nicname = user_nicname;
+	public void setUserNicname(String userNicname) {
+		this.userNicname = userNicname;
 	}
 
-	public String getUser_email() {
-		return user_email;
+	public String getUserEmail() {
+		return userEmail;
 	}
 
-	public void setUser_email(String user_email) {
-		this.user_email = user_email;
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 
-	public int getAuthority_id() {
-		return authority_id;
+	public int getAuthorityId() {
+		return authorityId;
 	}
 
-	public void setAuthority_id(int authority_id) {
-		this.authority_id = authority_id;
+	public void setAuthorityId(int authorityId) {
+		this.authorityId = authorityId;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + authority_id;
-		result = prime * result + ((user_email == null) ? 0 : user_email.hashCode());
-		result = prime * result + ((user_id == null) ? 0 : user_id.hashCode());
-		result = prime * result + ((user_nicname == null) ? 0 : user_nicname.hashCode());
+		result = prime * result + authorityId;
+		result = prime * result + ((userEmail == null) ? 0 : userEmail.hashCode());
+		result = prime * result + ((userId == null) ? 0 : userId.hashCode());
+		result = prime * result + ((userNicname == null) ? 0 : userNicname.hashCode());
 		return result;
 	}
 
@@ -73,29 +73,29 @@ public class NomalUser {
 		if (getClass() != obj.getClass())
 			return false;
 		NomalUser other = (NomalUser) obj;
-		if (authority_id != other.authority_id)
+		if (authorityId != other.authorityId)
 			return false;
-		if (user_email == null) {
-			if (other.user_email != null)
+		if (userEmail == null) {
+			if (other.userEmail != null)
 				return false;
-		} else if (!user_email.equals(other.user_email))
+		} else if (!userEmail.equals(other.userEmail))
 			return false;
-		if (user_id == null) {
-			if (other.user_id != null)
+		if (userId == null) {
+			if (other.userId != null)
 				return false;
-		} else if (!user_id.equals(other.user_id))
+		} else if (!userId.equals(other.userId))
 			return false;
-		if (user_nicname == null) {
-			if (other.user_nicname != null)
+		if (userNicname == null) {
+			if (other.userNicname != null)
 				return false;
-		} else if (!user_nicname.equals(other.user_nicname))
+		} else if (!userNicname.equals(other.userNicname))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "NomalUser [user_id=" + user_id + ", user_nicname=" + user_nicname + ", user_email=" + user_email
-				+ ", authority_id=" + authority_id + "]";
+		return "NomalUser [userId=" + userId + ", userNicname=" + userNicname + ", userEmail=" + userEmail
+				+ ", authorityId=" + authorityId + "]";
 	}
 }
