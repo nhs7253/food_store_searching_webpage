@@ -3,7 +3,7 @@
 <mapper namespace="com.food_store_searching_webpage.config.mybatis.mapper.BoardMapper">
 
 
-
+<!-- 
 	 <sql id="all-column">
         board_number,
      	board_title,
@@ -13,7 +13,6 @@
 	</sql>
  
  
- <!-- 매장 resultMap -->
  	<resultMap type="com.study.jsp.vo.Board" id="board-resultmap">
  		<id column="board_number" property="boardNumber"/>
  		<result column="board_title" property="boardTitle"/>
@@ -33,5 +32,5 @@
 		SELECT COUNT(*) 
 		FROM board
 	</select>
- 	
+ 	 -->
 </mapper>
