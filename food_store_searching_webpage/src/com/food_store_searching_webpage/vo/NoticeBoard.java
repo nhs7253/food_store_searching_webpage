@@ -2,18 +2,18 @@ package com.food_store_searching_webpage.vo;
 
 import java.sql.Date;
 /**
- * 
+ *공지사항 게시판
  * @author chogo
- *
+ *공지사항을 저장 하는 곳
  */
 public class NoticeBoard {
 
 	
-	private int noticeNum;   //number        
-	private String noticeTitle; //varchar2
-	private String noticeText;  //clob          
-	private Date noticeDate; // date         
-	private int noticeHit;   //number 
+	private int noticeNum;   //글번호        
+	private String noticeTitle; //글제목
+	private String noticeText;  //글내용          
+	private Date noticeDate; // 작성일         
+	private int noticeHit;   //조회수
 	
 	public NoticeBoard() {
 	}

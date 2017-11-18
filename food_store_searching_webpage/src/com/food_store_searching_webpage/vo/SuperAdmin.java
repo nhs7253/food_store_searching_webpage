@@ -1,8 +1,8 @@
 package com.food_store_searching_webpage.vo;
 /**
- * 
+ * 슈퍼 관리자
  * @author chogo
- *
+ * 최상위 사이트 관리자 권한 부여 및 관리
  */
 public class SuperAdmin {
 
