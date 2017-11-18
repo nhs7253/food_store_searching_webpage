@@ -2,35 +2,30 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.food_store_searching_webpage.config.mybatis.mapper.SightIntroMapper">
 
-
-<!-- 
-	 <sql id="all-column">
-        board_number,
-     	board_title,
-     	board_text,
-    	board_hit,
-     	board_date
+	<sql id="all-column">
+        intro
 	</sql>
  
- 
- 	<resultMap type="com.study.jsp.vo.Board" id="board-resultmap">
- 		<id column="board_number" property="boardNumber"/>
- 		<result column="board_title" property="boardTitle"/>
- 		<result column="board_text" property="boardText"/>
- 		<result column="board_hit" property="boardHit"/>
- 		<result column="board_date" property="boardDate"/>
+ 	<resultMap type="sightIntro" id="sightIntro-resultmap">
+ 		<id column="intro" property="intro"/>
  	</resultMap>
  	
- 	
- 	
- 	<select id="selectBoardAll" resultMap="board-resultmap">
+ 	<select id="selectSightIntro" resultMap="sightIntro-resultmap">
 		SELECT <include refid="all-column"/> 
-		FROM board
+		FROM sight_intro
 	</select>
 	
-	<select id="selectBoardCount" resultType="int">
-		SELECT COUNT(*) 
-		FROM board
-	</select>
- 	 -->
+	<insert id="insertSightIntro" parameterType="string">
+		INSERT INTO sight_intro VALUES(#{value})
+	</insert>
+	
+	<delete id="deleteSightIntro">
+		DELETE FROM sight_intro
+	</delete>
+	
+	<update id="updateSightIntro" parameterType="sightIntro">
+		UPDATE sight_intro
+		SET intro = #{intro}
+	</update>
+ 	
 </mapper>
